@@ -1,0 +1,51 @@
+.landing-title h1{
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 78px;
+    color: var(--color-5);
+}
+
+.input-label{
+    font-weight: 600;
+}
+
+.input-field{
+    border: 0px;
+    background:rgba(22, 22, 22, 0.05) ;
+    padding: 4px;
+    margin-bottom: 8px;
+}
+
+.input-file::-webkit-file-upload-button{
+    display: none;
+
+}
+
+/* Project Pagination */
+
+.project-pagination{
+    list-style: none;
+}
+
+.project-pagination .page-item{
+    padding: 4px 12px;
+    border-radius: 3px;
+    border: 0px ;
+    color: var(--color-2);
+}
+
+.project-pagination .page-item.active{
+    background-color: var(--color-2);
+    color: var(--color-5);
+}
+
+@media (width < 768px){
+    .landing-title{
+        padding: 0px;
+    }
+
+    .landing-title h1{
+        font-size: xx-large;
+        line-height: normal;
+    }
+}

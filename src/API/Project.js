@@ -1,0 +1,3 @@
+getProjectDetail = id => {
+
+}

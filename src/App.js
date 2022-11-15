@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import { Nav } from './Components/Nav';
+import { Landing } from './Pages/Landing';
+import { Footer } from './Components/Footer';
+import { Sign } from './Pages/Sign';
+import { SignIn } from './Pages/SignIn';
+import { RegisterStudent } from './Pages/RegisterStudent';
+import { RegisterVillage } from './Pages/RegisterVillage';
+import { Project,ProjectDetail } from './Pages/Project';
+import { Admin } from './Pages/Admin/Admin';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Outlet
+  } from "react-router-dom";
+
+  
+const Main = () => {
+    return(
+        <>
+            <Nav/>
+                <Outlet/>
+            <Footer/>
+        </>
+    )
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Main/>}>
+                    <Route index element={<Landing/>}/>    
+                    <Route path='project' element={<Project/>}/>
+                    <Route path='project/:id' element={<ProjectDetail/>}/>
+                </Route>
+                <Route path='/sign' element={<Sign/>}/>
+                <Route path='/signin' element={<SignIn/>}/>
+                <Route path='/register-student' element={<RegisterStudent/>}/>
+                <Route path='/register-village' element={<RegisterVillage/>}/>
+                <Route path='/admin-bantudesa/*' element={<Admin/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
+
